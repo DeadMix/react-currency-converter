@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+$bg-color: #24263f;
+$app-bg-color: #30314f;
+$app-shadow: #1f233e;
+$input-border-color: #525372;
+$input-bg-color: #2a2b49;
+$input-font-color: #b2b5c8;
+$btn-active-bg-color: #717efe;
+$active-color: #fff;
+
+body {
+	background-color: $bg-color;
+}
+
+* {
+	font-family: 'Inter', system-ui !important;
+	box-sizing: border-box;
+	user-select: none;
+}
+
+.App {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 30px;
+	width: 800px;
+	margin: 100px auto;
+	background-color: $app-bg-color;
+	padding: 30px;
+	box-shadow: 0 10px 20px $app-shadow;
+	border-radius: 15px;
+}
+
+.block {
+	input {
+		width: 100%;
+		margin-top: 20px;
+		padding: 20px 20px;
+		border: 1px solid $input-border-color;
+		border-radius: 5px;
+		font-size: 3rem;
+		font-weight: bold;
+		letter-spacing: 1.3px;
+		outline: none;
+		background: $input-bg-color;
+		color: $input-font-color;
+	}
+}
+
+.currencies {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	border: 1px solid $input-border-color;
+	border-radius: 5px;
+	list-style: none;
+	overflow: hidden;
+
+	li {
+		display: inline-flex;
+		padding: 10px 20px;
+		justify-content: center;
+		flex: 1;
+		color: $input-font-color;
+		cursor: pointer;
+
+		&:hover {
+			background-color: $input-border-color;
+		}
+
+		&:active {
+			background-color: $input-border-color;
+		}
+
+		&.active {
+			background-color: $btn-active-bg-color;
+			border-color: $btn-active-bg-color;
+			color: $active-color;
+		}
+
+		&:last-of-type {
+			display: inline-flex;
+			align-items: center;
+			flex: 0 0 50px;
+			border-right: 0;
+			
+
+			svg {
+				width: 16px;
+				height: 16px;
+				fill: $input-font-color;
+			}
+		}
+	}
+}
